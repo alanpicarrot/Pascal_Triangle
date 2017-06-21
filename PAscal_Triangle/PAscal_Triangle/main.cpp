@@ -7,9 +7,41 @@
 //
 
 #include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int Pascal (int n, int m)
+
+{
+    
+    if(m <= 0 || n <= 0 || n < m){
+        
+        return -1;
+    
+    }
+    
+    if(m == 1 || m == n){
+        
+        return 1;
+        
+    }
+    
+    
+    else
+        
+        return (Pascal(n-1,m-1) + Pascal(n-1,m));
+    
+    
+}
+
+int main() {
+    
+    int n, m ;
+    
+    cin >> n >> m;
+
+    cout << Pascal(n,m) << endl;
+    
+
     return 0;
 }
+
