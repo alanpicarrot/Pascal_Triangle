@@ -13,22 +13,15 @@ int Pascal (int n, int m)
 
 {
     
-    if(m <= 0 || n <= 0 || n < m){
-        
-        return -1;
-    
-    }
-    
-    if(m == 1 || m == n){
+    if(m == 0 || m == n){
         
         return 1;
         
     }
     
-    
     else
         
-        return (Pascal(n-1,m-1) + Pascal(n-1,m));
+        return ( Pascal ( n - 1 , m - 1 ) + Pascal ( n - 1 , m ) );
     
     
 }
