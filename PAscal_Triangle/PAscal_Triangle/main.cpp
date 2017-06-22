@@ -13,35 +13,45 @@ int Pascal (int n, int m)
 
 {
     
-    if(m <= 0 || n <= 0 || n < m){
+    int triangle[n+1][m+1] , row , column;
+    
+        for ( row = 1 ; row <= n ; row ++ ){
         
-        return -1;
-    
-    }
-    
-    if(m == 1 || m == n){
+            for ( column = 1 ; column <= min(row,m) ; column ++ ){
+            
+                
+                if(column == 1 || column == row){
+                    
+                    triangle[row][column] = 1;
+                    
+                                                }
+                
+                else
+                    
+                   triangle[row][column] = triangle[row-1][column-1] + triangle[row-1][column] ;
+            
+                                                                   }
         
-        return 1;
+                                           }
+    
+    
+    return triangle[n][m];
         
-    }
-    
-    
-    else
-        
-        return (Pascal(n-1,m-1) + Pascal(n-1,m));
-    
+
     
 }
+    
+
+
 
 int main() {
     
     int n, m ;
     
     cin >> n >> m;
-
+    
     cout << Pascal(n,m) << endl;
     
-
     return 0;
 }
 
