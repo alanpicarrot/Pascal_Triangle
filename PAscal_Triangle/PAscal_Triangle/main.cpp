@@ -13,30 +13,29 @@ int Pascal (int n, int m)
 
 {
     
-    int triangle[n+1][m+1] , row , column;
+    int triangle [m+1] , turn ,column;
     
-        for ( row = 1 ; row <= n ; row ++ ){
-        
-            for ( column = 1 ; column <= min(row,m) ; column ++ ){
+    for( turn = 1 ; turn <= n -1 ; turn ++){
+    
+        for ( column = 1 ; column <= min (m,turn) ; column ++ ){
             
                 
-                if(column == 1 || column == row){
+            if(column == 1 || column == turn){
                     
-                    triangle[row][column] = 1;
+                triangle [column] = 1;
                     
-                                                }
+            }
                 
-                else
+            else
                     
-                   triangle[row][column] = triangle[row-1][column-1] + triangle[row-1][column] ;
+                triangle [column] = triangle [column-1] + triangle [column] ;
             
-                                                                   }
-        
-                                           }
+            }
+    }
     
+    triangle [m] = triangle [m-1] + triangle [m] ;
     
-    return triangle[n][m];
-        
+    return triangle [m];
 
     
 }
