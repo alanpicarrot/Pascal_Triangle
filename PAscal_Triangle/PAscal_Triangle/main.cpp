@@ -15,9 +15,9 @@ int Pascal (int n, int m)
     
     int triangle [m+1] , turn ,column;
     
-    for( turn = 1 ; turn <= n -1 ; turn ++){
+    for( turn = 1 ; turn <= n ; turn++ ){
     
-        for ( column = 1 ; column <= min (m,turn) ; column ++ ){
+        for ( column = 1 ; column <= min (m,turn) ; column++ ){
             
                 
             if(column == 1 || column == turn){
@@ -33,7 +33,6 @@ int Pascal (int n, int m)
             }
     }
     
-    triangle [m] = triangle [m-1] + triangle [m] ;
     
     return triangle [m];
 
