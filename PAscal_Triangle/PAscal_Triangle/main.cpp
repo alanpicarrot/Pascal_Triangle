@@ -15,29 +15,27 @@ int Pascal (int n, int m)
     
     int triangle[n+1][m+1] , row , column;
     
-        for ( row = 1 ; row <= n ; row ++ ){
+    for ( row = 1 ; row <= n ; row ++ ){
         
-            for ( column = 1 ; column <= min(row,m) ; column ++ ){
+        for ( column = 1 ; column <= min(row,m) ; column ++ ){
             
                 
-                if(column == 1 || column == row){
+            if(column == 1 || column == row){
                     
-                    triangle[row][column] = 1;
+            triangle[row][column] = 1;
                     
-                                                }
+            }
                 
-                else
+            else
                     
-                   triangle[row][column] = triangle[row-1][column-1] + triangle[row-1][column] ;
+            triangle[row][column] = triangle[row-1][column-1] + triangle[row-1][column] ;
             
-                                                                   }
+        }
         
-                                           }
+    }
     
     
     return triangle[n][m];
-        
-
     
 }
     
